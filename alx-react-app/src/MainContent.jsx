@@ -1,23 +1,11 @@
 import React from 'react';
 
-function MainContent() {
+function Footer() {
   return (
-    <main>
-      <p>I love to visit New York, Paris, and Tokyo.</p>
-    </main>
+    <footer>
+      <p>© 2023 City Lovers</p>
+    </footer>
   );
 }
 
-export default MainContent;
-
-import React from 'react';
-
-function MainContent() {
-  return (
-    <main>
-      <p>I love to visit New York, Paris, and Tokyo.</p>
-    </main>
-  );
-}
-
-export default MainContent;
+export default Footer;
