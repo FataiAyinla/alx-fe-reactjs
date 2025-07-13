@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Header />
-      WelcomeMessage.jsx
+      <WelcomeMessage/>
       <MainContent />
       <Footer />
     </>
@@ -26,8 +26,24 @@ function App() {
       <Header />
       <MainContent />
       <Footer />
+      <WelcomeMessage/>
     </>
   );
 }
 
 export default App;
+
+// src/App.jsx
+import React from 'react';
+import WelcomeMessage from './components/WelcomeMessage'; // <- Correct import
+
+function App() {
+  return (
+    <div>
+      <WelcomeMessage /> {/* <- Correct usage */}
+    </div>
+  );
+}
+
+export default App;
+
