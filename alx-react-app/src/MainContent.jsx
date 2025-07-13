@@ -1,4 +1,6 @@
 // MainContent.jsx
+import React from 'react';
+
 function MainContent() {
   return (
     <main>
@@ -8,3 +10,4 @@ function MainContent() {
 }
 
 export default MainContent;
+<WelcomeMessage />
