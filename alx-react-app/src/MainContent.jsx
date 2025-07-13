@@ -1,7 +1,7 @@
-// src/components/mainContent.jsx
+// src/components/MainContent.jsx
 import React from 'react';
 
-function mainContent() {
+function MainContent() {
   return (
     <main>
       <p>I love to visit New York, Paris, and Tokyo.</p>
