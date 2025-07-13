@@ -1,3 +1,4 @@
+// MainContent.jsx
 function MainContent() {
   return (
     <main>
