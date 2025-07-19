@@ -1,9 +1,12 @@
-// src/components/Header.jsx
-import React from 'react';
-
 function Header() {
+const headerStyle = {
+  backgroundColor: '#282c34',
+  color: 'white',
+  textAlign: 'center',
+};
+
   return (
-    <header>
+    <header style={headerStyle}>
       <h1>My Favorite Cities</h1>
     </header>
   );

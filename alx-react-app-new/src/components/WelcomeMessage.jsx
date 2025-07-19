@@ -1,17 +1,4 @@
 function WelcomeMessage() {
-    return (function App() {
-  return (
-    <div>
-      <WelcomeMessage />
-    </div>
-  );
-}
-
-export default App;
-
-        
-
-function WelcomeMessage() {
     return (
         <div>
             <h1>Hello everyone, I am learning React at ALX!</h1>
@@ -22,4 +9,3 @@ function WelcomeMessage() {
 }
 
 export default WelcomeMessage;
-
