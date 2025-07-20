@@ -42,9 +42,8 @@ function App() {
       </p>
     </>
   );
-}
-// src/App.jsx
-import React from 'react';
+
+  // src/App.jsx
 import Counter from './components/Counter';
 
 function App() {
@@ -56,6 +55,8 @@ function App() {
   );
 }
 
-export default App;
+
+
+}
 
 export default App;
