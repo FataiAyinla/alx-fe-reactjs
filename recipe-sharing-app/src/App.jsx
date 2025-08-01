@@ -4,14 +4,12 @@ import RecipeList from './components/RecipeList';
 
 function App() {
   return (
-    <div style={{ padding: '2rem', fontFamily: 'Arial, sans-serif' }}>
-      <h1>Recipe Sharing App</h1>
+    <div className="max-w-xl mx-auto p-6">
+      <h1 className="text-2xl font-bold mb-6">Recipe Sharing App</h1>
       <AddRecipeForm />
-      <hr style={{ margin: '2rem 0' }} />
       <RecipeList />
     </div>
   );
 }
 
 export default App;
-
