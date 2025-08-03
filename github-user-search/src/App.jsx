@@ -1,11 +1,11 @@
-// src/App.jsx
-import React from 'react';
+import React from "react";
+import Search from "./components/Search";
 
 function App() {
   return (
-    <div>
+    <div style={{ maxWidth: "600px", margin: "2rem auto", padding: "1rem" }}>
       <h1>GitHub User Search</h1>
-      {/* Components will go here */}
+      <Search />
     </div>
   );
 }
