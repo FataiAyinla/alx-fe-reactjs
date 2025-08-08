@@ -1,19 +1,18 @@
-const UserProfile = () => {
+// src/components/UserProfile.jsx
+export default function UserProfile() {
   return (
-    <div className="mx-auto bg-white p-4 sm:p-4 md:p-8 rounded-lg shadow-md text-center max-w-xs sm:max-w-xs md:max-w-sm">
-      <img
-        src="https://via.placeholder.com/150"
-        alt="User Profile"
-        className="mx-auto rounded-full w-24 h-24 sm:w-24 sm:h-24 md:w-36 md:h-36 object-cover"
-      />
-      <h2 className="mt-4 text-base sm:text-lg md:text-xl font-semibold text-gray-800">
-        Jane Doe
-      </h2>
-      <p className="mt-2 text-xs sm:text-sm md:text-base text-gray-600">
-        Frontend Developer with a passion for clean design and efficient code.
-      </p>
+    <div className="max-w-sm mx-auto bg-white rounded-2xl shadow-lg p-6 sm:p-4 transition-shadow duration-300 ease-in-out hover:shadow-xl">
+      <div className="flex flex-col items-center">
+        <img
+          src="/path/to/profile.jpg"
+          alt="User profile"
+          className="w-32 h-32 rounded-full object-cover transition-transform duration-300 ease-in-out hover:scale-110"
+        />
+        <h2 className="mt-4 text-2xl font-semibold text-gray-800 transition-colors duration-300 ease-in-out hover:text-blue-500">
+          Jane Doe
+        </h2>
+        <p className="text-gray-600">Frontend Developer</p>
+      </div>
     </div>
   );
-};
-
-export default UserProfile;
+}
