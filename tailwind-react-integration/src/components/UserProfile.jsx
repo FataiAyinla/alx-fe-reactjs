@@ -1,6 +1,6 @@
 export default function UserProfile() {
   return (
-    <div className="max-w-xs sm:max-w-sm mx-auto bg-white rounded-2xl shadow-lg sm:p-4 md:p-8 transition-shadow duration-300 ease-in-out hover:shadow-xl">
+    <div className="max-w-xs md:max-w-sm mx-auto bg-white rounded-2xl shadow-lg sm:p-4 md:p-8 transition-shadow duration-300 ease-in-out hover:shadow-xl">
       <div className="flex flex-col items-center">
         <img
           src="/path/to/profile.jpg"
