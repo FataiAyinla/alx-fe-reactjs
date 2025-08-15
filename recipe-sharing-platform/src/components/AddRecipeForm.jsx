@@ -3,7 +3,7 @@ import { useState } from "react";
 function AddRecipeForm() {
   const [title, setTitle] = useState("");
   const [ingredients, setIngredients] = useState("");
-  const [instructions, setInstructions] = useState("");
+  const [steps, setSteps] = useState("");
   const [errors, setErrors] = useState({});
 
   const handleSubmit = (e) => {
@@ -14,7 +14,7 @@ function AddRecipeForm() {
     if (!title.trim()) newErrors.title = "Title is required.";
     if (!ingredients.trim() || ingredients.split(",").length < 2)
       newErrors.ingredients = "Enter at least 2 ingredients separated by commas.";
-    if (!instructions.trim()) newErrors.instructions = "Instructions are required.";
+    if (!steps.trim()) newErrors.steps = "Steps are required.";
 
     setErrors(newErrors);
 
@@ -22,14 +22,14 @@ function AddRecipeForm() {
       const newRecipe = {
         title,
         ingredients: ingredients.split(",").map((item) => item.trim()),
-        instructions: instructions.split("\n").map((step) => step.trim()),
+        steps: steps.split("\n").map((step) => step.trim()),
       };
       console.log("New Recipe:", newRecipe);
 
       // Reset form
       setTitle("");
       setIngredients("");
-      setInstructions("");
+      setSteps("");
       alert("Recipe submitted successfully!");
     }
   };
@@ -70,19 +70,21 @@ function AddRecipeForm() {
           )}
         </div>
 
-        {/* Instructions Field */}
+        {/* Steps Field */}
         <div>
-          <label className="block font-semibold mb-1">Preparation Steps (one per line)</label>
+          <label className="block font-semibold mb-1">
+            Preparation Steps (one per line)
+          </label>
           <textarea
-            value={instructions}
-            onChange={(e) => setInstructions(e.target.value)}
+            value={steps}
+            onChange={(e) => setSteps(e.target.value)}
             rows={5}
             className={`w-full p-2 border rounded ${
-              errors.instructions ? "border-red-500" : "border-gray-300"
+              errors.steps ? "border-red-500" : "border-gray-300"
             }`}
           />
-          {errors.instructions && (
-            <p className="text-red-500 text-sm mt-1">{errors.instructions}</p>
+          {errors.steps && (
+            <p className="text-red-500 text-sm mt-1">{errors.steps}</p>
           )}
         </div>
 
