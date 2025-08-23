@@ -1,13 +1,3 @@
-export default function Login() {
-  const handleLogin = () => {
-    localStorage.setItem("auth", "true");
-    window.location.href = "/profile"; // redirect after login
-  };
-
-  return (
-    <div>
-      <h1>Login Page</h1>
-      <button onClick={handleLogin}>Login</button>
-    </div>
-  );
+export default function Home() {
+  return <h1 className="text-2xl">Welcome to the Home Page</h1>;
 }
