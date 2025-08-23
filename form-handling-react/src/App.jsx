@@ -1,13 +1,10 @@
-import React from "react";
 import RegistrationForm from "./components/RegistrationForm";
 import FormikForm from "./components/FormikForm";
 
 function App() {
   return (
-    <div>
-      <h1>User Registration</h1>
+    <div className="flex flex-col items-center justify-center h-screen space-y-8">
       <RegistrationForm />
-      <hr />
       <FormikForm />
     </div>
   );
