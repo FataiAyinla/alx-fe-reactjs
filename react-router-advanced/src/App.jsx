@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Login from "./pages/Login";
 import Profile from "./components/Profile";
-import Post from "./components/Post";
+import BlogPost from "./components/BlogPost";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/profile">Profile</Link>
-        <Link to="/posts/1">Post 1</Link>
+        <Link to="/blog/1">Blog Post 1</Link>
       </nav>
 
       <Routes>
@@ -21,7 +21,7 @@ function App() {
         <Route path="about" element={<About />} />
         <Route path="login" element={<Login />} />
 
-        {/* Protected nested route for Profile */}
+        {/* Protected route for Profile */}
         <Route
           path="profile/*"
           element={
@@ -31,8 +31,8 @@ function App() {
           }
         />
 
-        {/* Dynamic route */}
-        <Route path="posts/:postId" element={<Post />} />
+        {/* ✅ Dynamic blog post route */}
+        <Route path="blog/:id" element={<BlogPost />} />
       </Routes>
     </Router>
   );
