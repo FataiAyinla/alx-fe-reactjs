@@ -18,12 +18,12 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="login" element={<Login />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login />} />
 
-        {/* Protected route for Profile */}
+        {/* Protected Profile route */}
         <Route
-          path="profile/*"
+          path="/profile/*"
           element={
             <ProtectedRoute>
               <Profile />
@@ -31,8 +31,8 @@ function App() {
           }
         />
 
-        {/* ✅ Dynamic blog post route */}
-        <Route path="blog/:id" element={<BlogPost />} />
+        {/* ✅ Dynamic route must include `/blog/:id` */}
+        <Route path="/blog/:id" element={<BlogPost />} />
       </Routes>
     </Router>
   );
