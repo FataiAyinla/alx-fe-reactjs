@@ -1,11 +1,13 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
-// Validation Schema
+// Validation schema using Yup
 const validationSchema = Yup.object({
   username: Yup.string().required("Username is required"),
   email: Yup.string().email("Invalid email").required("Email is required"),
-  password: Yup.string().min(6, "Password must be at least 6 characters").required("Password is required"),
+  password: Yup.string()
+    .min(6, "Password must be at least 6 characters")
+    .required("Password is required"),
 });
 
 export default function FormikForm() {
@@ -23,48 +25,46 @@ export default function FormikForm() {
       alert("User registered successfully with Formik!");
       resetForm();
     } catch (err) {
-      console.error("Error:", err);
+      console.error("Error registering user:", err);
     }
   };
 
   return (
-    <div>
-      <h2>Formik Registration Form</h2>
-      <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
+    <div className="max-w-md mx-auto p-4 border rounded shadow">
+      <h2 className="text-xl font-bold mb-4">Formik Registration Form</h2>
+
+      <Formik
+        initialValues={initialValues}
+        validationSchema={validationSchema}
+        onSubmit={handleSubmit}
+      >
         <Form>
-          <div>
-            <label>Username:</label>
-            <Field type="text" name="username" />
-            <ErrorMessage name="username" component="p" style={{ color: "red" }} />
+          <div className="mb-3">
+            <label className="block font-medium">Username:</label>
+            <Field name="username" type="text" className="w-full p-2 border rounded" />
+            <ErrorMessage name="username" component="p" className="text-red-500 mt-1" />
           </div>
 
-          <div>
-            <label>Email:</label>
-            <Field type="email" name="email" />
-            <ErrorMessage name="email" component="p" style={{ color: "red" }} />
+          <div className="mb-3">
+            <label className="block font-medium">Email:</label>
+            <Field name="email" type="email" className="w-full p-2 border rounded" />
+            <ErrorMessage name="email" component="p" className="text-red-500 mt-1" />
           </div>
 
-          <div>
-            <label>Password:</label>
-            <Field type="password" name="password" />
-            <ErrorMessage name="password" component="p" style={{ color: "red" }} />
+          <div className="mb-3">
+            <label className="block font-medium">Password:</label>
+            <Field name="password" type="password" className="w-full p-2 border rounded" />
+            <ErrorMessage name="password" component="p" className="text-red-500 mt-1" />
           </div>
 
-          <button type="submit">Register</button>
+          <button
+            type="submit"
+            className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+          >
+            Register
+          </button>
         </Form>
       </Formik>
     </div>
   );
 }
-
-import FormikForm from "./components/FormikForm";
-
-function App() {
-  return (
-    <div>
-      <h1>User Registration</h1>
-      <FormikForm />
-    </div>
-  );
-}
-
