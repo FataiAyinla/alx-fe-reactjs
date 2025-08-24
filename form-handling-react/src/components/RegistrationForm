@@ -1,65 +1,91 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
-export default function RegistrationForm() {
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-  });
-  const [error, setError] = useState("");
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+function RegistrationForm() {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!formData.username || !formData.email || !formData.password) {
-      setError("All fields are required.");
+
+    if (!username) {
+      setErrors("Username is required");
       return;
     }
-    setError("");
-    console.log("Form submitted:", formData);
-    alert("Controlled Form Submitted Successfully!");
+    if (!email) {
+      setErrors("Email is required");
+      return;
+    }
+    if (!password) {
+      setErrors("Password is required");
+      return;
+    }
+
+    setErrors("");
+    console.log("Controlled Form Submitted:", { username, email, password });
+    alert("Controlled registration successful!");
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 border p-4 rounded-md">
-      {error && <p className="text-red-500">{error}</p>}
+    <form
+      onSubmit={handleSubmit}
+      className="bg-white shadow-lg rounded-xl p-6 w-80 flex flex-col gap-4"
+    >
+      <h2 className="text-xl font-bold text-gray-700 text-center">
+        Controlled Form
+      </h2>
+
+      {errors && <p className="text-red-500 text-sm">{errors}</p>}
+
+      {/* Username */}
       <div>
-        <label className="block">Username</label>
+        <label htmlFor="username" className="block mb-1 font-medium text-sm">
+          Username
+        </label>
         <input
           type="text"
-          name="username"
-          value={formData.username}
-          onChange={handleChange}
-          className="border p-2 w-full"
+          id="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
         />
       </div>
+
       <div>
-        <label className="block">Email</label>
+        <label htmlFor="email" className="block mb-1 font-medium text-sm">
+          Email
+        </label>
         <input
           type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          className="border p-2 w-full"
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
         />
       </div>
+
       <div>
-        <label className="block">Password</label>
+        <label htmlFor="password" className="block mb-1 font-medium text-sm">
+          Password
+        </label>
         <input
           type="password"
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
-          className="border p-2 w-full"
+          id="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
         />
       </div>
-      <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">
+
+      <button
+        type="submit"
+        className="mt-1 bg-teal-600 text-white py-2 px-4 rounded-lg hover:bg-teal-700 transition"
+      >
         Register
       </button>
     </form>
   );
 }
+
+export default RegistrationForm;
